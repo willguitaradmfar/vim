@@ -10,13 +10,7 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
 set directory=$HOME/.vim/swapfiles//
 
 " column markers
-set cc=80,120
-
-" gvim config
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
+set cc=120
 
 " fugitive
 set diffopt+=vertical
@@ -44,16 +38,13 @@ Plug 'lepture/vim-velocity'
 Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
 Plug 'maksimr/vim-jsbeautify'
-Plug 'wakatime/vim-wakatime'
 Plug 'sirver/ultisnips'
 Plug 'lilydjwg/colorizer'
 Plug 'tpope/vim-unimpaired'
 Plug 'jgallen23/runcode.vim'
 Plug 'ervandew/ag'
-Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'moll/vim-node'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 call plug#end()
 
@@ -84,9 +75,9 @@ endif
 set wildignore+=*/node_modules/*,*/dist/*,*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\node_modules\\*,*\\dist\\*,*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
@@ -94,12 +85,6 @@ let g:ctrlp_custom_ignore = {
 let g:deoplete#enable_at_startup = 1
 
 let g:airline#extensions#tabline#enabled = 1
-
-let JSHintUpdateWriteOnly=1
-
-let g:open_url_browser="xdg-open"
-
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 colorscheme nord
 
@@ -109,3 +94,21 @@ if !has('nvim')
   autocmd BufWinLeave *.* mkview
   autocmd BufWinEnter *.* silent loadview 
 endif
+
+nnoremap <C-B> :NERDTreeToggle<CR>
+
+nnoremap <A-1> 1gt
+nnoremap <A-2> 2gt
+nnoremap <A-3> 3gt
+nnoremap <A-4> 4gt
+nnoremap <A-5> 5gt
+nnoremap <A-6> 6gt
+nnoremap <A-7> 7gt
+nnoremap <A-8> 8gt
+nnoremap <A-9> 9gt
+nnoremap <A-0> 10gt
+
+nnoremap <C-t>     :tabnew<CR>:NERDTree<CR>
+nnoremap <C-q>     :tabclose<CR>
+
+nnoremap <F5>     :!npm start
