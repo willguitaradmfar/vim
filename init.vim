@@ -15,6 +15,9 @@ set cc=120
 " fugitive
 set diffopt+=vertical
 
+
+let g:javascript_plugin_flow = 1
+
 " VimPlug - Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -45,6 +48,7 @@ Plug 'jgallen23/runcode.vim'
 Plug 'ervandew/ag'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'moll/vim-node'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
@@ -112,3 +116,8 @@ nnoremap <C-t>     :tabnew<CR>:NERDTree<CR>
 nnoremap <C-q>     :tabclose<CR>
 
 nnoremap <F5>     :!npm start
+
+
+nnoremap <C-j>     :cn<CR> :NERDTreeFind %<CR> <C-w>w
+nnoremap <C-k>     :cp<CR> :NERDTreeFind %<CR> <C-w>w
+nnoremap <C-h>     :Ag 
