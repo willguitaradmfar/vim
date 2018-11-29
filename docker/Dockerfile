@@ -18,7 +18,7 @@ RUN nvim -i NONE -c PlugInstall -c quitall
 
 FROM node:8.11.0-alpine
 
-RUN apk update && apk add neovim the_silver_searcher git nodejs
+RUN apk update && apk add neovim the_silver_searcher git
 
 COPY --from=0 /root /root
 

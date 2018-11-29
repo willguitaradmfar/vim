@@ -115,9 +115,11 @@ nnoremap <A-0> 10gt
 nnoremap <C-t>     :tabnew<CR>:NERDTree<CR>
 nnoremap <C-q>     :tabclose<CR>
 
-nnoremap <F5>     :!npm start
-
+nnoremap j       j^
+nnoremap k       k^
 
 nnoremap <C-j>     :cn<CR> :NERDTreeFind %<CR> <C-w>w
 nnoremap <C-k>     :cp<CR> :NERDTreeFind %<CR> <C-w>w
 nnoremap <C-h>     :Ag 
+
+nnoremap <F12>     :source ~/.config/nvim/init.vim<CR>
