@@ -32,13 +32,9 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lepture/vim-velocity'
-Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'sirver/ultisnips'
@@ -49,6 +45,12 @@ Plug 'ervandew/ag'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
+
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -99,7 +101,7 @@ if !has('nvim')
   autocmd BufWinEnter *.* silent loadview 
 endif
 
-nnoremap <C-B> :NERDTreeToggle<CR>
+nnoremap <C-B> :NERDTreeToggle<CR> :NERDTreeRefreshRoot<CR>
 
 nnoremap <A-1> 1gt
 nnoremap <A-2> 2gt
@@ -115,8 +117,7 @@ nnoremap <A-0> 10gt
 nnoremap <C-t>     :tabnew<CR>:NERDTree<CR>
 nnoremap <C-q>     :tabclose<CR>
 
-nnoremap j       j^
-nnoremap k       k^
+nnoremap <C-n>     :e 
 
 nnoremap <C-j>     :cn<CR> :NERDTreeFind %<CR> <C-w>w
 nnoremap <C-k>     :cp<CR> :NERDTreeFind %<CR> <C-w>w
