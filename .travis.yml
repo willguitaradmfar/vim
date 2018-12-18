@@ -1,0 +1,8 @@
+
+script:
+- docker --version
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- docker build -f docker/Dockerfile -t travis-ci-build-stages .
+- docker images
+- docker tag travis-ci-build-stages $DOCKER_USERNAME/vim:latest
+- docker push $DOCKER_USERNAME/vim:latest
